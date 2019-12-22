@@ -11,7 +11,7 @@ const elementClickSpeedCounter = document.getElementById("click__speed_counter")
 let elementClickSpeedCounterNumber = parseInt(elementClickSpeedCounter.textContent);
 let previousClickDate = +new Date;
 
-imageCookie.onmousedown = () => {
+imageCookie.ontouchstart = () => {
 	imageCookie.width = 180;
 	elementClickerCounterNumber += 1;
 	let newClickDate = +new Date;
@@ -20,4 +20,4 @@ imageCookie.onmousedown = () => {
 	elementClickSpeedCounter.textContent = new String(elementClickSpeedCounterNumber.toFixed(2));
 	previousClickDate = +new Date;
 };
-imageCookie.onmouseup = () => imageCookie.width = 200;
+imageCookie.ontouchend = () => imageCookie.width = 200;
