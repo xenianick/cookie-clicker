@@ -21,3 +21,15 @@ imageCookie.ontouchstart = () => {
 	previousClickDate = +new Date;
 };
 imageCookie.ontouchend = () => imageCookie.width = 200;
+
+imageCookie.onmousedown = () => {
+	imageCookie.width = 180;
+	elementClickerCounterNumber += 1;
+	let newClickDate = +new Date;
+	elementClickerCounter.textContent = new String(elementClickerCounterNumber);
+	elementClickSpeedCounterNumber = 1000 / (newClickDate - previousClickDate);
+	elementClickSpeedCounter.textContent = new String(elementClickSpeedCounterNumber.toFixed(2));
+	previousClickDate = +new Date;
+};
+imageCookie.onmouseup = () => imageCookie.width = 200;
+
